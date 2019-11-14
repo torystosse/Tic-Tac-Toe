@@ -1,6 +1,6 @@
 'use strict'
 
-// const gameLogic = require('./win-lose-logic')
+const gameLogic = require('./win-lose-logic')
 
 // const api = require('./api')
 // const ui = require('./ui')
@@ -16,10 +16,10 @@ const switchPlayer = () => {
     currentPlayer = 'o'
   }
 }
-// id = event.target.id
-// const moveToGameBoard = (index, value) => {
-//   gameBoard.splice(index, 0, value)
-// }
+// below will replace the index with the value
+const moveToGameBoard = (index, value) => {
+  gameLogic.gameBoard.splice(index, 1, value)
+}
 
 const onMakeMove = event => {
   event.preventDefault()
@@ -28,11 +28,29 @@ const onMakeMove = event => {
   // if/else statement that checks for current player && that space is blank
   if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
     $(event.target).text('x')
-    // currentPlayer.push(gameBoard)
+    // assigns id based on the ID of the div in HTML
+    const id = event.target.id
+    console.log(id)
+    console.log(gameLogic.gameBoard)
+    moveToGameBoard(id, currentPlayer)
+    if (gameLogic.checkForWinner() === true) {
+      $('span').text('player x wins!')
+    }
+    // if (gameLogic.checkForWinner() === true) {
+    //   $('span').text('player x wins!')
+    // }
     $('span').text("Player O's move")
     switchPlayer()
   } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
     $(event.target).text('o')
+    const id = event.target.id
+    console.log(id)
+    console.log(gameLogic.gameBoard)
+    moveToGameBoard(id, currentPlayer)
+    gameLogic.checkForWinner()
+    // if (gameLogic.checkForWinner() === true) {
+    //   $('span').text('player o wins!')
+    // }
     $('span').text("Player X's move")
     switchPlayer()
   } else {
