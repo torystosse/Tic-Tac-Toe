@@ -1,0 +1,62 @@
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div {
+  border: 1px solid;
+  font-size: 80px;
+  height: 200px;
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+}
+
+.box-zero {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-one {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-two {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-three {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-four {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-five {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-six {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-seven {
+  display: flex;
+  flex: 0 0 32%;
+}
+
+.box-eight {
+  display: flex;
+  flex: 0 0 32%;
+}
