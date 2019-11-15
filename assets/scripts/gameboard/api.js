@@ -1,15 +1,18 @@
 'use strict'
 
-// const config = require('../config')
-// const store = require('../store')
+const config = require('../config')
+const store = require('../store')
 
-// const signUp = formData => {
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-up',
-//     method: 'POST',
-//     data: formData
-//   })
-// }
+const startGame = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+    //    data: formData
+  })
+}
 //
 // const signIn = formData => {
 //   return $.ajax({
@@ -41,5 +44,5 @@
 // }
 
 module.exports = {
-
+  startGame
 }

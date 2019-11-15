@@ -2,8 +2,8 @@
 
 const gameLogic = require('./win-lose-logic')
 
-// const api = require('./api')
-// const ui = require('./ui')
+const api = require('./api')
+const ui = require('./ui')
 // const getFormFields = require('../../../lib/get-form-fields')
 
 let currentPlayer = 'o'
@@ -25,25 +25,22 @@ const moveToGameBoard = (index, value) => {
 
 const onMakeMove = event => {
   event.preventDefault()
-
+  const id = event.target.id
   switchPlayer()
+  moveToGameBoard(id, currentPlayer)
   // if/else statement that checks for current player && that space is blank
   if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
     $(event.target).text('x')
     // assigns id based on the ID of the div in HTML
-    const id = event.target.id
     // console.log(id)
     console.log(gameLogic.gameBoard)
-    moveToGameBoard(id, currentPlayer)
     gameLogic.checkForWinner()
     gameLogic.tieGame(gameLogic.gameBoard)
     switchPlayer()
   } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
     $(event.target).text('o')
-    const id = event.target.id
     // console.log(id)
     console.log(gameLogic.gameBoard)
-    moveToGameBoard(id, currentPlayer)
     gameLogic.checkForWinner()
     gameLogic.tieGame(gameLogic.gameBoard)
     switchPlayer()
@@ -52,9 +49,18 @@ const onMakeMove = event => {
   }
 }
 
+const onStartGame = event => {
+  event.preventDefault()
+
+  api.startGame()
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
+}
+
 const addHandlers = event => {
   $('div').on('click', onMakeMove)
   $('div').on('click', switchPlayer)
+  $('.start-game').on('click', onStartGame)
 }
 
 module.exports = {
