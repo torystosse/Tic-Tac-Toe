@@ -36,6 +36,7 @@ const onMakeMove = event => {
     console.log(gameLogic.gameBoard)
     moveToGameBoard(id, currentPlayer)
     gameLogic.checkForWinner()
+    gameLogic.tieGame(gameLogic.gameBoard)
     switchPlayer()
   } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
     $(event.target).text('o')
@@ -44,6 +45,7 @@ const onMakeMove = event => {
     console.log(gameLogic.gameBoard)
     moveToGameBoard(id, currentPlayer)
     gameLogic.checkForWinner()
+    gameLogic.tieGame(gameLogic.gameBoard)
     switchPlayer()
   } else {
     $('.message').text('You clicked this box already.')
