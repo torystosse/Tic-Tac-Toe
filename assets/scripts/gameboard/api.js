@@ -3,6 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 // const gameLogic = require('./win-lose-logic')
+// const events = require('./events')
 
 const startGame = () => {
   return $.ajax({
@@ -36,27 +37,26 @@ const startGame = () => {
 // - store the ID of the game that was just started
 // - figure out gameData object
 //
-// const updateGame = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/games/'${store.game.id},
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     },
-//     data: gameLogic.gameData
-//   })
-// }
-//
-// const signOut = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-out',
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     }
-//   })
-// }
+const updateGame = (id, currentPlayer) => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: {
+      game: {
+        cell: {
+          index: id,
+          value: currentPlayer
+        },
+        over: false
+      }
+    }
+  })
+}
 
 module.exports = {
-  startGame
+  startGame,
+  updateGame
 }

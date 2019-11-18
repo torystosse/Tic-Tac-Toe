@@ -4,65 +4,93 @@ const gameLogic = require('./win-lose-logic')
 
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 // const getFormFields = require('../../../lib/get-form-fields')
 
-let currentPlayer = 'o'
+let currentPlayer = 'x'
 
 // function that switches between players
 const switchPlayer = () => {
   if (currentPlayer === 'o') {
     currentPlayer = 'x'
-    $('.message').text("Player O's move")
+    $('#game-message').text("Player O's move")
+    console.log('player os move')
   } else {
     currentPlayer = 'o'
-    $('.message').text("Player X's move")
+    $('#game-message').text("Player X's move")
+    console.log('player xs move')
   }
 }
 // below will replace the index with the value
 const moveToGameBoard = (index, value) => {
-  gameLogic.gameBoard.splice(index, 1, value)
+  store.gameBoard.splice(index, 1, value)
 }
 
 const onMakeMove = event => {
   event.preventDefault()
-  const id = event.target.id
-  switchPlayer()
-  moveToGameBoard(id, currentPlayer)
-  // if/else statement that checks for current player && that space is blank
-  if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
-    $(event.target).text('x')
-    // assigns id based on the ID of the div in HTML
-    // console.log(id)
-    console.log(gameLogic.gameBoard)
-    gameLogic.checkForWinner()
-    gameLogic.tieGame(gameLogic.gameBoard)
-    switchPlayer()
-  } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
-    $(event.target).text('o')
-    // console.log(id)
-    console.log(gameLogic.gameBoard)
-    gameLogic.checkForWinner()
-    gameLogic.tieGame(gameLogic.gameBoard)
-    switchPlayer()
+  if (store.game.over === false) {
+    const id = event.target.id
+    // switchPlayer()
+    moveToGameBoard(id, currentPlayer)
+    api.updateGame(id, currentPlayer)
+
+    // if/else statement that checks for current player && that space is blank
+    if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
+      $(event.target).text('x')
+      // assigns id based on the ID of the div in HTML
+      // console.log(id)
+      console.log(store.gameBoard)
+      gameLogic.checkForWinner()
+      gameLogic.tieGame(store.gameBoard)
+      switchPlayer()
+    } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
+      $(event.target).text('o')
+      // console.log(id)
+      console.log(store.gameBoard)
+      gameLogic.checkForWinner()
+      gameLogic.tieGame(store.gameBoard)
+      switchPlayer()
+    } else {
+      $('#game-message').text('You clicked this box already.')
+    }
   } else {
-    $('.message').text('You clicked this box already.')
+    $('#game-message').text('Game is over.')
   }
 }
 
 const onStartGame = event => {
   event.preventDefault()
 
+  currentPlayer = 'x'
+  store.gameOver = false
+  store.gameBoard = ['', '', '', '', '', '', '', '', '']
+
   api.startGame()
     .then(ui.startGameSuccess)
     .catch(ui.startGameFailure)
+  // $('div').on('click')
 }
+
+// const onRestartGame = event => {
+//   event.preventDefault()
+//
+//   api.startGame()
+//     .then(ui.restartGameSuccess)
+//     .catch(ui.restartGameFailure)
+//
+//   store.gameboard = ['', '', '', '', '', '', '', '', '']
+//   $('div').html(' ')
+//   $('.message').replaceWith(' ')
+// }
 
 const addHandlers = event => {
   $('div').on('click', onMakeMove)
-  $('div').on('click', switchPlayer)
+  // $('div').on('click', switchPlayer)
   $('.start-game').on('click', onStartGame)
+  // $('.after-end-game').on('click', onRestartGame)
 }
 
 module.exports = {
   addHandlers
+  // onRestartGame
 }
