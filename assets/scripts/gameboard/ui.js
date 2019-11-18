@@ -55,6 +55,7 @@ const onShowGamesSuccess = response => {
   const games = response.games.length
 
   $('#user-stats').text(games)
+  $('#user-stats').show()
 }
 
 const onShowGamesFailure = () => {
