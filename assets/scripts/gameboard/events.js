@@ -14,11 +14,11 @@ const switchPlayer = () => {
   if (currentPlayer === 'o') {
     currentPlayer = 'x'
     $('#game-message').text("Player O's move")
-    console.log('player os move')
+    // console.log('player os move')
   } else {
     currentPlayer = 'o'
     $('#game-message').text("Player X's move")
-    console.log('player xs move')
+    // console.log('player xs move')
   }
 }
 // below will replace the index with the value
@@ -37,13 +37,13 @@ const onMakeMove = event => {
     if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
       $(event.target).text('x')
       // assigns id based on the ID of the div in HTML
-      console.log(store.gameBoard)
+      // console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
       switchPlayer()
     } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
       $(event.target).text('o')
-      console.log(store.gameBoard)
+      // console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
       switchPlayer()

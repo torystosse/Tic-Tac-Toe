@@ -52,7 +52,7 @@ const onSignOutSuccess = () => {
   $('.before-auth').show()
   $('.after-auth').hide()
   $('#user-stats').hide()
-  $('#after-start-game').hide()
+  $('.after-start-game').hide()
   console.log('everything is hidden')
 }
 
