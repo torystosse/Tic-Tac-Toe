@@ -25,6 +25,7 @@ const startGameSuccess = responseData => {
   $('.message').replaceWith(' ')
   onSuccess('You successfully started a game!')
   $('.after-start-game').show()
+  $('#user-stats').hide()
 
   // $('.start-game').hide()
   // console.log('responseData is', responseData)
@@ -50,10 +51,22 @@ const restartGameFailure = () => {
   onFailure('Uh oh... something went wrong! Try again.')
 }
 
+const onShowGamesSuccess = response => {
+  const games = response.games.length
+
+  $('#user-stats').text(games)
+}
+
+const onShowGamesFailure = () => {
+  onFailure('Uh oh... something went wrong! Try again.')
+}
+
 module.exports = {
   startGameSuccess,
   startGameFailure,
   // restartGame,
   restartGameSuccess,
-  restartGameFailure
+  restartGameFailure,
+  onShowGamesSuccess,
+  onShowGamesFailure
 }

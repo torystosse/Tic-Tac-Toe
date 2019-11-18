@@ -33,19 +33,16 @@ const onMakeMove = event => {
     // switchPlayer()
     moveToGameBoard(id, currentPlayer)
     api.updateGame(id, currentPlayer)
-
     // if/else statement that checks for current player && that space is blank
     if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
       $(event.target).text('x')
       // assigns id based on the ID of the div in HTML
-      // console.log(id)
       console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
       switchPlayer()
     } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
       $(event.target).text('o')
-      // console.log(id)
       console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
@@ -83,11 +80,20 @@ const onStartGame = event => {
 //   $('.message').replaceWith(' ')
 // }
 
+const onShowGames = event => {
+  event.preventDefault()
+
+  api.showGames()
+    .then(ui.onShowGamesSuccess)
+    .catch(ui.onShowGamesFailure)
+}
+
 const addHandlers = event => {
   $('div').on('click', onMakeMove)
   // $('div').on('click', switchPlayer)
   $('.start-game').on('click', onStartGame)
   // $('.after-end-game').on('click', onRestartGame)
+  $('#get-all-games').on('submit', onShowGames)
 }
 
 module.exports = {
