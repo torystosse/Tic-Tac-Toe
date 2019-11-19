@@ -6,6 +6,7 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,7 +15,7 @@
     <body>
       <aside>
         <section class="before-auth">
-          <h2>Sign Up</h2>
+          <h4>Sign Up</h4>
           <form ID="sign-up">
             <input type="email" name="credentials[email]" placeholder="email">
             <input type="password" name="credentials[password]" placeholder="password">
@@ -22,7 +23,7 @@
             <button class="btn btn-primary">Submit</button>
           </form>
 
-          <h2>Sign In</h2>
+          <h4>Sign In</h4>
           <form ID="sign-in">
             <input type="email" name="credentials[email]" placeholder="email">
             <input type="password" name="credentials[password]" placeholder="password">
@@ -31,19 +32,20 @@
         </section>
 
         <section class="after-auth">
-          <h2>Change Password</h2>
+          <h3>Account Actions</h3>
+          <h4>Change Password</h4>
           <form ID="change-password">
             <input type="password" name="passwords[old]" placeholder="old password">
             <input type="password" name="passwords[new]" placeholder="new password">
             <button class="btn btn-primary">Submit</button>
           </form>
 
-          <h2>Sign Out</h2>
+          <h4>Sign Out</h4>
           <form ID="sign-out">
             <button class="btn btn-danger">Sign Out</button>
           </form>
 
-          <h2>Get All Games</h2>
+          <h4>How Many Games Have I Played?</h4>
           <form ID="get-all-games">
             <button class="btn btn-primary">Get All Games</button>
             <p ID="user-stats"></p>
@@ -51,19 +53,18 @@
         </section>
       <hr>
       <p ID="user-message"></p>
-
-      <h1>Tic Tac Toe</h1>
     </aside>
+      <h1>Tic Tac Toe</h1>
     <main class="after-start-game">
-      <div ID="0" class="box-zero" data-cell-index='0'></div>
-      <div ID="1" class="box-one" data-cell-index='1'></div>
-      <div ID="2" class="box-two" data-cell-index='2'></div>
-      <div ID="3" class="box-three" data-cell-index='3'></div>
-      <div ID="4" class="box-four" data-cell-index='4'></div>
-      <div ID="5" class="box-five" data-cell-index='5'></div>
-      <div ID="6" class="box-six" data-cell-index='6'></div>
-      <div ID="7" class="box-seven" data-cell-index='7'></div>
-      <div ID="8" class="box-eight" data-cell-index='8'></div>
+      <div ID="0" class="box-zero box"></div>
+      <div ID="1" class="box-one box"></div>
+      <div ID="2" class="box-two box"></div>
+      <div ID="3" class="box-three box"></div>
+      <div ID="4" class="box-four box"></div>
+      <div ID="5" class="box-five box"></div>
+      <div ID="6" class="box-six box"></div>
+      <div ID="7" class="box-seven box"></div>
+      <div ID="8" class="box-eight box"></div>
       <p ID="game-message"></p>
     </main>
     <hr>

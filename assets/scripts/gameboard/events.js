@@ -88,7 +88,7 @@ const onShowGames = event => {
 }
 
 const addHandlers = event => {
-  $('div').on('click', onMakeMove)
+  $('.box').on('click', onMakeMove)
   // $('div').on('click', switchPlayer)
   $('.start-game').on('click', onStartGame)
   // $('.after-end-game').on('click', onRestartGame)
