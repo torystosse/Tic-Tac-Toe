@@ -13,11 +13,11 @@ let currentPlayer = 'x'
 const switchPlayer = () => {
   if (currentPlayer === 'o') {
     currentPlayer = 'x'
-    $('#game-message').text("Player O's move")
+    $('#game-message').text("Player X's move")
     // console.log('player os move')
   } else {
     currentPlayer = 'o'
-    $('#game-message').text("Player X's move")
+    $('#game-message').text("Player O's move")
     // console.log('player xs move')
   }
 }
@@ -65,7 +65,6 @@ const onStartGame = event => {
   api.startGame()
     .then(ui.startGameSuccess)
     .catch(ui.startGameFailure)
-  // $('div').on('click')
 }
 
 // const onRestartGame = event => {

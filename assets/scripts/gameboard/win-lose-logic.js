@@ -11,7 +11,7 @@ const isTie = currentElement => {
 
 const tieGame = gameBoard => {
   if (gameBoard.every(isTie)) {
-    // console.log("No one wins, it's a tie...")
+    console.log("No one wins, it's a tie...")
     $('#user-message').text("No one wins, it's a tie...")
     store.game.over = true
   }
@@ -69,49 +69,49 @@ const checkForWinner = () => {
     // ui.restartGame()
   } else if (gameBoard[0] === 'o' && gameBoard[1] === 'o' && gameBoard[2] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[0] === 'o' && gameBoard[4] === 'o' && gameBoard[8] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[0] === 'o' && gameBoard[3] === 'o' && gameBoard[6] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[1] === 'o' && gameBoard[4] === 'o' && gameBoard[7] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[2] === 'o' && gameBoard[4] === 'o' && gameBoard[6] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[2] === 'o' && gameBoard[5] === 'o' && gameBoard[8] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[3] === 'o' && gameBoard[4] === 'o' && gameBoard[5] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()
   } else if (gameBoard[6] === 'o' && gameBoard[7] === 'o' && gameBoard[8] === 'o') {
     // console.log('Player O wins!')
-    $('#user-message').replaceWith('Player O wins!')
+    $('#user-message').text('Player O wins!')
     // $('div').off('click')
     store.game.over = true
     // ui.restartGame()

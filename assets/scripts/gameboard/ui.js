@@ -26,6 +26,7 @@ const startGameSuccess = responseData => {
   onSuccess('You successfully started a game!')
   $('.after-start-game').show()
   $('#user-stats').hide()
+  // $('#user-message').hide()
 
   // $('.start-game').hide()
   // console.log('responseData is', responseData)
