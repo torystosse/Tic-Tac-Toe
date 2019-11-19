@@ -11,7 +11,7 @@ const isTie = currentElement => {
 
 const tieGame = gameBoard => {
   if (gameBoard.every(isTie)) {
-    console.log("No one wins, it's a tie...")
+    // console.log("No one wins, it's a tie...")
     $('#user-message').text("No one wins, it's a tie...")
     store.game.over = true
   }

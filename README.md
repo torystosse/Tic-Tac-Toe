@@ -69,6 +69,7 @@ in the small pieces I was missing.
 Some minor things I would like to resolve are:
 * Removing the "You successfully logged in" once a user begins to play game.
 * Having the "Game Over" messaging appear sooner.
+* Make the 'X''s and 'O''s centered on the board.
 * Add at least one feature, like playing against a computer.
 
 
@@ -82,8 +83,9 @@ Some minor things I would like to resolve are:
 
 ### Wireframes & User Stories
 
-[Wireframe 1] (https://i.imgur.com/5P2ov5D.jpg)
-[Wireframe 3] (https://i.imgur.com/07CafCo.jpg)
+![Wireframe 1](https://i.imgur.com/5P2ov5D.jpg)
+![Wireframe 2](https://imgur.com/r1eE4gs)
+![Wireframe 3](https://i.imgur.com/07CafCo.jpg)
 
 #### User Stories:
 
