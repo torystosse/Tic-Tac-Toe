@@ -28,14 +28,48 @@ after having played a game will clear the board, and the user can play a new gam
 
 ### The Planning
 
+My planning was aggressive, but realistic. I began by taking a recommended schedule,
+still planning on following it, but putting aside what I would accomplish on each
+day, and making sure I would meet that daily goal, but ideally exceed it. Wireframes
+and User Stories were the first things to accomplish, and they had to be enough to
+meet MVP, but not too much that I would focus on unnecessary, though nice to have,
+details. The goal was MVP, and if time allowed, as we only had four days, then
+those extra details would be added.
 
 
-### Problem Solving
+### The Process & Problem Solving
+
+I worked step by step, tackling creating the game board first (but trying not to
+dive down a CSS rabbithole), making the gameboard interactive, and then creating
+the game logic. The game logic was my first real issue to tackle, and encountered
+multiple issues, such as making sure the player was switching correctly (and
+aligning with the mark being placed on the board), and once a winner was found,
+not allowing the game to continue to be played. Talking through what I was trying
+to accomplish with my peers, and putting our brains together (plus utilizing Google/
+the jQuery docs), helped to overcome the problems. Initially, I used the `.off()`
+method to turn off the click handlers that would add the mark to the board, but
+later on in the development process, removed that, in finding that I was having
+trouble turning the click handler "back on" correctly, when the user would restart
+a new game. I utilized booleans to allow the user to play again, once starting
+a new game.
+
+One of my big hurdles to overcome was the update game API. I encountered a number
+of issues with this, such as correctly storing the game's ID to allow it to be
+updates, and then finding a way to update the JS representation of the game board
+in the API. I broke it down, piece by piece, and wrote some pseudo code to start
+thinking about exactly what I was trying to accomplish. This allowed me to get
+my thoughts going in the right direction, and to tackle one small problem at a
+time. In asking for help, it allowed me to piece together everything, and fill
+in the small pieces I was missing.
 
 
 
 ### Remaining Unsolved Problems
 
+Some minor things I would like to resolve are:
+* Removing the "You successfully logged in" once a user begins to play game.
+* Having the "Game Over" messaging appear sooner.
+* Add at least one feature, like playing against a computer.
 
 
 ### Technologies Used
@@ -48,8 +82,8 @@ after having played a game will clear the board, and the user can play a new gam
 
 ### Wireframes & User Stories
 
-['Wireframe 1'] (https://i.imgur.com/5P2ov5D.jpg)
-['Wireframe 3'] (https://i.imgur.com/07CafCo.jpg)
+[Wireframe 1] (https://i.imgur.com/5P2ov5D.jpg)
+[Wireframe 3] (https://i.imgur.com/07CafCo.jpg)
 
 #### User Stories:
 
