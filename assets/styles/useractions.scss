@@ -1,3 +1,11 @@
+h1 {
+  font-weight: 600;
+}
+
+h4, h3 {
+  font-weight: 400;
+}
+
 .success {
   background-color: green;
   color: white;
@@ -10,8 +18,15 @@
   font-size: 1em;
 }
 
+.account-actions {
+  border: 1px black solid;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
 .after-auth {
-   display: none;
+  display: none;
 }
 
 .after-start-game {
@@ -20,4 +35,15 @@
 
 .after-end-game {
   display: none;
+}
+
+.before-auth {
+  border: 1px black solid;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.inputs {
+  margin: 5px;
 }

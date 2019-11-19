@@ -6,47 +6,57 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <header>
+        <h1>Tic Tac Toe</h1>
+      </header>
       <aside>
         <section class="before-auth">
-          <h4>Sign Up</h4>
           <form ID="sign-up">
-            <input type="email" name="credentials[email]" placeholder="email">
-            <input type="password" name="credentials[password]" placeholder="password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+            <h4>Sign Up</h4>
+            <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+            <br>
+            <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+            <br>
+            <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password">
+            <br>
             <button class="btn btn-primary">Submit</button>
           </form>
-
-          <h4>Sign In</h4>
+          <hr>
           <form ID="sign-in">
-            <input type="email" name="credentials[email]" placeholder="email">
-            <input type="password" name="credentials[password]" placeholder="password">
+            <h4>Sign In</h4>
+            <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+            <br>
+            <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+            <br>
             <button class="btn btn-primary">Submit</button>
           </form>
         </section>
 
-        <section class="after-auth">
+        <section class="after-auth account-actions">
           <h3>Account Actions</h3>
-          <h4>Change Password</h4>
           <form ID="change-password">
-            <input type="password" name="passwords[old]" placeholder="old password">
-            <input type="password" name="passwords[new]" placeholder="new password">
+            <h4>Change Password</h4>
+            <input type="password" name="passwords[old]" class="inputs" placeholder="old password">
+            <br>
+            <input type="password" name="passwords[new]" class="inputs" placeholder="new password">
+            <br>
             <button class="btn btn-primary">Submit</button>
           </form>
-
-          <h4>Sign Out</h4>
+          <hr>
           <form ID="sign-out">
+            <h4>Sign Out</h4>
             <button class="btn btn-danger">Sign Out</button>
           </form>
-
-          <h4>How Many Games Have I Played?</h4>
+          <hr>
           <form ID="get-all-games">
+            <h4>How Many Games Have I Played?</h4>
             <button class="btn btn-primary">Get All Games</button>
             <p ID="user-stats"></p>
           </form>
@@ -54,7 +64,6 @@
       <hr>
       <p ID="user-message"></p>
     </aside>
-      <h1>Tic Tac Toe</h1>
     <main class="after-start-game">
       <div ID="0" class="box-zero box"></div>
       <div ID="1" class="box-one box"></div>
@@ -67,8 +76,8 @@
       <div ID="8" class="box-eight box"></div>
       <p ID="game-message"></p>
     </main>
-    <hr>
     <section class="after-auth">
+      <hr>
       <button class="btn btn-primary start-game">Start Game</button>
     </section>
     </body>

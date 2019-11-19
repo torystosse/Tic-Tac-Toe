@@ -1,9 +1,5 @@
 * {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1, h3 {
-  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
 }
 
 form {
@@ -29,6 +25,8 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 nav {
