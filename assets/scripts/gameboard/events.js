@@ -35,14 +35,14 @@ const onMakeMove = event => {
     api.updateGame(id, currentPlayer)
     // if/else statement that checks for current player && that space is blank
     if ((currentPlayer === 'x') && ($(event.target).html() === '')) {
-      $(event.target).text('x')
+      $(event.target).css('background', 'transparent').text('x')
       // assigns id based on the ID of the div in HTML
       // console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
       switchPlayer()
     } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
-      $(event.target).text('o')
+      $(event.target).css('background', 'transparent').text('o')
       // console.log(store.gameBoard)
       gameLogic.checkForWinner()
       gameLogic.tieGame(store.gameBoard)
