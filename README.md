@@ -48,7 +48,8 @@ after having played a game will clear the board, and the user can play a new gam
 
 ### Wireframes & User Stories
 
-['Wireframes'] ()
+['Wireframe 1'] (https://i.imgur.com/5P2ov5D.jpg)
+['Wireframe 3'] (https://i.imgur.com/07CafCo.jpg)
 
 #### User Stories:
 
