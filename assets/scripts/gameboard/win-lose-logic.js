@@ -20,7 +20,7 @@ const tieGame = gameBoard => {
 const checkForWinner = () => {
   const gameBoard = store.gameBoard
   if (gameBoard[0] === 'x' && gameBoard[1] === 'x' && gameBoard[2] === 'x') {
-    // console.log('Player X wins!')
+    // console.log('Player X wins....?')
     $('#user-message').text('Player X wins!')
     // $('div').off('click')
     store.game.over = true

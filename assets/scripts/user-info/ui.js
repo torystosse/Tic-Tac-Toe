@@ -51,9 +51,9 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.before-auth').show()
   $('.after-auth').hide()
-  $('#user-stats').hide()
+  $('#user-stats').text(' ')
   $('.after-start-game').hide()
-  $('#game-message').hide()
+  $('#game-message').text(' ')
   // console.log('everything is hidden')
 }
 

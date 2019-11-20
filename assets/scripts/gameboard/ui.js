@@ -22,7 +22,7 @@ const onFailure = message => {
 const startGameSuccess = responseData => {
   store.game = responseData.game
   $('.box').html('').css('background', '#e6f2ff')
-  $('.message').replaceWith(' ')
+  $('#game-message').text(' ')
   onSuccess('You successfully started a game!')
   $('.after-start-game').show()
   $('#user-stats').hide()
