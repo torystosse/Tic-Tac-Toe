@@ -49,3 +49,26 @@ h4, h3 {
 .inputs {
   margin: 2px;
 }
+
+@media (max-width: 600px) {
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .account-actions {
+    padding: 6px;
+  }
+
+  .after-auth {
+    margin-bottom: 20px;
+  }
+
+  .before-auth {
+    padding: 6px;
+  }
+}
