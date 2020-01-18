@@ -30,6 +30,7 @@ const onSignInSuccess = responseData => {
   store.user = responseData.user
   onSuccess('You successfully signed in.')
   $('.after-auth').show()
+  $('.account-actions').hide()
   $('.before-auth').hide()
 }
 

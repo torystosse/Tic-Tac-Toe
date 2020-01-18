@@ -14,6 +14,12 @@
     </head>
     <body>
       <header>
+        <nav class="nav justify-content-end">
+          <button class="btn btn-info account-actions-toggle after-auth"> Account </button>
+          <form ID="sign-out" class="after-auth">
+            <button class="btn btn-danger sign-out">Sign Out</button>
+          </form>
+        </nav>
         <h1>Tic Tac Toe</h1>
       </header>
       <aside>
@@ -50,11 +56,11 @@
             <button class="btn btn-info">Submit</button>
           </form>
           <hr>
-          <form ID="sign-out">
+          <!-- <form ID="sign-out">
             <h4>Sign Out</h4>
             <button class="btn btn-danger">Sign Out</button>
           </form>
-          <hr>
+          <hr> -->
           <form ID="get-all-games">
             <h4>How Many Games Have I Played?</h4>
             <button class="btn btn-info">Get All Games</button>

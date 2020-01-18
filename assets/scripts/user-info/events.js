@@ -48,11 +48,16 @@ const onSignOut = event => {
     .catch(ui.onSignOutFailure)
 }
 
+const onToggleActions = event => {
+  $('.account-actions').toggle()
+}
+
 const addHandlers = event => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('.account-actions-toggle').on('click', onToggleActions)
 }
 
 module.exports = {
