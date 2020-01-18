@@ -2,11 +2,14 @@
 
 const store = require('../store')
 
+const messages = $('#user-message')
+
 const onSuccess = message => {
   $('#user-message')
     .removeClass('failure')
     .addClass('success')
     .text(message)
+  setTimeout(() => messages.html(''), 3000)
   $('form').trigger('reset')
 }
 
@@ -15,6 +18,7 @@ const onFailure = message => {
     .removeClass('success')
     .addClass('failure')
     .text(message)
+  setTimeout(() => messages.html(''), 3000)
   $('form').trigger('reset')
 }
 
