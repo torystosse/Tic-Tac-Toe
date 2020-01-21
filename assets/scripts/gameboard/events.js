@@ -38,15 +38,15 @@ const onMakeMove = event => {
       $(event.target).css('background', 'transparent').text('x')
       // assigns id based on the ID of the div in HTML
       // console.log(store.gameBoard)
+      switchPlayer()
       gameLogic.tieGame(store.gameBoard)
       gameLogic.checkForWinner()
-      switchPlayer()
     } else if ((currentPlayer === 'o') && ($(event.target).html() === '')) {
       $(event.target).css('background', 'transparent').text('o')
       // console.log(store.gameBoard)
+      switchPlayer()
       gameLogic.tieGame(store.gameBoard)
       gameLogic.checkForWinner()
-      switchPlayer()
     } else {
       $('#game-message').text('You clicked this box already.')
     }

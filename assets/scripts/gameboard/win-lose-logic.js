@@ -9,12 +9,14 @@ const onXWin = () => {
   $('#user-message')
     .text('Player X wins!')
   setTimeout(() => messages.html(''), 3000)
+  $('#game-message').text('Game is over.')
 }
 
 const onOWin = () => {
   $('#user-message')
     .text('Player O wins!')
   setTimeout(() => messages.html(''), 3000)
+  $('#game-message').text('Game is over.')
 }
 
 const messages = $('#user-message')
