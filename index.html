@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <nav class="nav justify-content-end">
+          <button class="btn btn-info account-actions-toggle after-auth"> Account </button>
+          <form ID="sign-out" class="after-auth">
+            <button class="btn btn-danger sign-out">Sign Out</button>
+          </form>
+        </nav>
+        <h1>Tic Tac Toe</h1>
+      </header>
+      <aside>
+        <section class="before-auth">
+          <form ID="sign-up">
+            <h4>Sign Up</h4>
+            <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+            <br />
+            <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+            <br />
+            <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="password">
+            <br />
+            <button class="btn btn-info">Submit</button>
+          </form>
+          <hr>
+          <form ID="sign-in">
+            <h4>Sign In</h4>
+            <input type="email" name="credentials[email]" class="inputs" placeholder="email">
+            <br />
+            <input type="password" name="credentials[password]" class="inputs" placeholder="password">
+            <br />
+            <button class="btn btn-info">Submit</button>
+          </form>
+        </section>
+
+        <section class="after-auth account-actions">
+          <h3>Account Actions</h3>
+          <form ID="change-password">
+            <h4>Change Password</h4>
+            <input type="password" name="passwords[old]" class="inputs" placeholder="old password">
+            <br />
+            <input type="password" name="passwords[new]" class="inputs" placeholder="new password">
+            <br />
+            <button class="btn btn-info">Submit</button>
+          </form>
+          <hr>
+          <!-- <form ID="sign-out">
+            <h4>Sign Out</h4>
+            <button class="btn btn-danger">Sign Out</button>
+          </form>
+          <hr> -->
+          <form ID="get-all-games">
+            <h4>How Many Games Have I Played?</h4>
+            <button class="btn btn-info">Get All Games</button>
+            <p ID="user-stats"></p>
+          </form>
+        </section>
+      <hr>
+      <p ID="user-message"></p>
+    </aside>
+    <p ID="game-message"></p>
+    <main class="after-start-game board">
+      <div ID="0" class="box-zero box"></div>
+      <div ID="1" class="box-one box"></div>
+      <div ID="2" class="box-two box"></div>
+      <div ID="3" class="box-three box"></div>
+      <div ID="4" class="box-four box"></div>
+      <div ID="5" class="box-five box"></div>
+      <div ID="6" class="box-six box"></div>
+      <div ID="7" class="box-seven box"></div>
+      <div ID="8" class="box-eight box"></div>
+    </main>
+    <section class="after-auth">
+      <!-- <hr> -->
+      <button class="btn btn-primary start-game">Start Game</button>
+    </section>
+    </body>
+</html>
